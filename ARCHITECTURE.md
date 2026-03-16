@@ -12,7 +12,7 @@
 
 ## 2. System Context (C4 Level 1)
 
-![System Context Diagram - Shows Library System with Librarian, Member, and Admin actors](./ımages/screenshot1.png)
+![System Context Diagram - Shows Library System with Librarian, Member, and Admin actors](./Images/Screenshot1.png)
 
 The Library Management System operates in a context where multiple user types interact with the system:
 
@@ -29,7 +29,7 @@ The Library Management System operates in a context where multiple user types in
 
 ## 3. Container Diagram (C4 Level 2)
 
-![C4 Context Diagram](./ımages/Screenshot2.png)
+![C4 Context Diagram](./Images/Screenshot2.png)
 
 The system is decomposed into logical containers representing different applications/services:
 
