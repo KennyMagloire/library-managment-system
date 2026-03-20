@@ -1,6 +1,5 @@
 # Stakeholder Analysis
 
-# Stakeholder Analysis
 
 ---
 
