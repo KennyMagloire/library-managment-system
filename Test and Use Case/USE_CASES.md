@@ -9,7 +9,7 @@ The use case diagram models how different actors interact with the Library Manag
 ---
 
 ## 2. Use Case Diagram 
-![Use Case Diagram](../images/.Use_Case_Diagram.drawio.png)
+![Use Case Diagram](../images/Use_Case_Diagram.drawio.png)
 
 ---
 
