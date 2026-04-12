@@ -14,7 +14,7 @@
 ---
 
 ## Template Descriptions
-![Templates](./Images/Screenshot%202026-04-11%20094224.png)
+![Templates](./Images/Screenshot%202026-04-11%20114819.png)
 ### Team Planning
 This one is essentially a big table. You have your task title, who it is assigned to, and the status. It is clean and organized, but the issue is that everything lives in a single flat view. Once the task list gets long, it becomes hectic to track what is actually moving and what is stuck. It is better suited for situations where you have multiple sub-teams working in parallel — for example, a large software company where Team A handles authentication while Team B handles reporting. In that context, the table view gives management a clear overview. But for a focused development workflow, it is not the most practical choice.
 
