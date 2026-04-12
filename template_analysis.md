@@ -51,6 +51,6 @@ Added to represent the QA phase before a task is marked complete. The system has
 Added to surface tasks that cannot progress due to an unresolved dependency or technical issue. Rather than leaving blockers buried inside task descriptions, this column makes them immediately visible on the board.
 
 ### Other Customizations
-- All issues are assigned to **@KennyMagloire** to reflect ownership of each task
+- All issues are assigned to me as the only team memeber to reflect ownership of each task
 - All issues are labelled **enhancement** since every user story represents a new system feature
 - Labels are enabled as a visible field on the board so they appear directly on each card
