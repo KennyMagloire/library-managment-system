@@ -1,0 +1,262 @@
+openapi: 3.0.3
+info:
+  title: Library Management System API
+  description: REST API for managing books, patrons, and loans.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8080
+    description: Local development server
+
+tags:
+  - name: Books
+    description: Book catalogue management
+  - name: Patrons
+    description: Library patron management
+  - name: Loans
+    description: Loan and borrowing management
+
+paths:
+
+  /api/books:
+    get:
+      tags: [Books]
+      summary: Get all books
+      responses:
+        '200':
+          description: List of all books
+    post:
+      tags: [Books]
+      summary: Add a new book
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Book'
+      responses:
+        '201':
+          description: Book created
+        '400':
+          description: Invalid input
+
+  /api/books/{id}:
+    get:
+      tags: [Books]
+      summary: Get a book by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Book found
+        '404':
+          description: Book not found
+
+  /api/books/available:
+    get:
+      tags: [Books]
+      summary: Get all available books
+      responses:
+        '200':
+          description: List of available books
+
+  /api/books/author/{author}:
+    get:
+      tags: [Books]
+      summary: Get books by author
+      parameters:
+        - name: author
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of books by author
+
+  /api/patrons:
+    get:
+      tags: [Patrons]
+      summary: Get all patrons
+      responses:
+        '200':
+          description: List of all patrons
+    post:
+      tags: [Patrons]
+      summary: Register a new patron
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Patron'
+      responses:
+        '201':
+          description: Patron registered
+        '400':
+          description: Invalid input
+
+  /api/patrons/{id}:
+    get:
+      tags: [Patrons]
+      summary: Get a patron by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Patron found
+        '404':
+          description: Patron not found
+
+  /api/patrons/active:
+    get:
+      tags: [Patrons]
+      summary: Get all active patrons
+      responses:
+        '200':
+          description: List of active patrons
+
+  /api/loans:
+    get:
+      tags: [Loans]
+      summary: Get all loans
+      responses:
+        '200':
+          description: List of all loans
+    post:
+      tags: [Loans]
+      summary: Create a new loan
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Loan'
+      responses:
+        '201':
+          description: Loan created
+        '400':
+          description: Invalid input
+
+  /api/loans/{id}:
+    get:
+      tags: [Loans]
+      summary: Get a loan by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Loan found
+        '404':
+          description: Loan not found
+
+  /api/loans/active:
+    get:
+      tags: [Loans]
+      summary: Get all active loans
+      responses:
+        '200':
+          description: List of active loans
+
+  /api/loans/overdue:
+    get:
+      tags: [Loans]
+      summary: Get all overdue loans
+      responses:
+        '200':
+          description: List of overdue loans
+
+  /api/loans/patron/{patronId}:
+    get:
+      tags: [Loans]
+      summary: Get loans by patron
+      parameters:
+        - name: patronId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of loans for the patron
+
+components:
+  schemas:
+    Book:
+      type: object
+      properties:
+        bookID:
+          type: string
+          example: "B001"
+        ISBN:
+          type: string
+          example: "978-0132350884"
+        title:
+          type: string
+          example: "Clean Code"
+        author:
+          type: string
+          example: "Robert Martin"
+        genre:
+          type: string
+          example: "Programming"
+        publicationYear:
+          type: integer
+          example: 2008
+        totalCopies:
+          type: integer
+          example: 3
+
+    Patron:
+      type: object
+      properties:
+        patronId:
+          type: string
+          example: "P001"
+        institutionId:
+          type: string
+          example: "STU2024001"
+        name:
+          type: string
+          example: "John Dlamini"
+        email:
+          type: string
+          example: "john@univ.ac.za"
+        phone:
+          type: string
+          example: "0821234567"
+        affiliationType:
+          type: string
+          example: "STUDENT"
+
+    Loan:
+      type: object
+      properties:
+        loanId:
+          type: string
+          example: "L001"
+        patronId:
+          type: string
+          example: "P001"
+        bookId:
+          type: string
+          example: "B001"
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          example: "Book not found with ID: B999"
