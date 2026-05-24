@@ -9,6 +9,9 @@ public class SystemUserFactory {
 
     public static SystemUser createUser(UserRole role, String userId,
                                         String username, String passwordHash) {
+                if (username == null || username.isBlank()) {
+                                throw new IllegalArgumentException("Username cannot be null or empty");
+                }
         switch (role) {
             case LIBRARIAN:
                 System.out.println("Creating Librarian: " + username);
