@@ -3,8 +3,11 @@
 [![CI](https://github.com/KennyMagloire/library-managment-system/actions/workflows/ci.yml/badge.svg)](https://github.com/KennyMagloire/library-managment-system/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Java](https://img.shields.io/badge/Java-21-blue.svg)](https://openjdk.org/projects/jdk/21/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen.svg)]
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-blue.svg)]
+[![Maven](https://img.shields.io/badge/Maven-3.8-red.svg)]
 
-A Java-based CLI application that digitises and automates the operations of a university library. Manages book inventory, patron registration, borrowing/returns, fine tracking, and report generation.
+A Java-based CLI application that digitises and automates the operations of a university library. Manages book inventory, patron registration, borrowing/returns, fine tracking, and report generation. Built with Java 21 · Spring Boot REST API · MySQL · Maven · GitHub Actions CI/CD
 
 ---
 
